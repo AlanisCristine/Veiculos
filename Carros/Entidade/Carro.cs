@@ -9,15 +9,23 @@ namespace Veiculos.Entidade;
 public class Carro : Veiculo
 {
     public string ParteCarro { get; set; }
-    public Carro(string tipo, string modelo, int ano, double capacidadeTanque, double consumo, double distanciaPercorida, double tempoEstmado, string Partecarro)
-        : base(tipo, modelo, ano, capacidadeTanque, consumo, distanciaPercorida, tempoEstmado)
+    public Carro(int id, string tipo, string modelo, int ano, decimal capacidadeTanque, decimal consumo, decimal distanciaPercorida, decimal tempoEstmado, string Partecarro)
+        : base(id, tipo, modelo, ano, capacidadeTanque, consumo, distanciaPercorida, tempoEstmado)
     {
         ParteCarro = Partecarro;
     }
-
-    public void ExibirDetalhes()
+    public Carro()
+            : base()
     {
-        Console.WriteLine($"Tipo: {Tipo} \n Modelo: {Modelo} \n Ano: {Ano}  \n Capacidade do Tanque: {CapacidadeTanque}  \n Consumo: {Consumo}  \n Distancia Percorrida: {DistanciaPercorida} \n Tempo Estimado:{TempoEstimado} \n Parte do Carro: {ParteCarro}");
+
+    }
+    public override string ExibirDetalhes()
+    {
+        string mensagemDetalhes = base.ExibirDetalhes();
+        mensagemDetalhes += 
+             $"Parte do Carro: {ParteCarro}";
+
+        return mensagemDetalhes;
     }
     public double CalcularConsumo(double distancia, double Consumo)
     {

@@ -3,35 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Veiculos.Repository.Interfaces;
+using Carros.Repository.Interfaces;
 
 namespace Veiculos.Entidade
 {
     public class Veiculo : IVeiculo
     {
+        public int Id { get; set; }
         public string Tipo { get; set; }
         public string Modelo { get; set; }
         public int Ano { get; set; }
-        public double CapacidadeTanque { get; set; }
-        public double Consumo { get; set; }
-        public double DistanciaPercorida { get; set; }
-        public double TempoEstimado { get; set; }
+        public decimal CapacidadeTanque { get; set; }
+        public decimal Consumo { get; set; }
+        public decimal DistanciaPercorrida { get; set; }
+        public decimal TempoEstimado { get; set; }
 
-        public Veiculo(string tipo, string modelo, int ano, double capacidadeTanque, double consumo, double distanciaPercorida, double tempoEstmado)
+        public Veiculo(int id, string tipo, string modelo, int ano, decimal capacidadeTanque, decimal consumo, decimal distanciaPercorida, decimal tempoEstmado)
         {
+            Id = id;
             Tipo = tipo;
             Modelo = modelo;
             Ano = ano;
             CapacidadeTanque = capacidadeTanque;
             Consumo = consumo;
-            DistanciaPercorida = distanciaPercorida;
+            DistanciaPercorrida = distanciaPercorida;
             TempoEstimado = tempoEstmado;
 
         }
-
-        public void ExibirDetalhes()
+        public Veiculo()
         {
-            Console.WriteLine($"Tipo: {Tipo} \n Modelo: {Modelo} \n Ano: {Ano}  \n Capacidade do Tanque: {CapacidadeTanque}  \n Consumo: {Consumo}  \n Distancia Percorrida: {DistanciaPercorida} \nTempo Estimado:{TempoEstimado}");
+
+        }
+        public virtual string ExibirDetalhes()
+        {
+            string MensagemExibirDetalhes = $"Modelo: {Modelo}" +
+            $"\n Ano: {Ano}  " +
+            $"\n Capacidade do Tanque: {CapacidadeTanque}L " +
+            $"\n Consumo: {Consumo}km/l";
+           
+            return MensagemExibirDetalhes;
         }
 
         public double CalcularConsumo(double distancia, double Consumo)
