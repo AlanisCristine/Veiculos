@@ -41,5 +41,9 @@ namespace Carros.Service
         {
             repository.Remover(id);
         }
+        public string ExibirDetalhes(int id)
+        {
+           return repository.ExibirDetalhes(id);
+        }
     }
 }

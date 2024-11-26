@@ -14,5 +14,6 @@ namespace Carros.Repository.Interfaces
         void Editar(Caminhao carrinho);
         List<Caminhao> Listar();
         Caminhao BuscarPorId(int id);
+        string ExibirDetalhes(int id);
     }
 }

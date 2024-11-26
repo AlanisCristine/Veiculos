@@ -46,5 +46,12 @@ namespace Carros.Repository
             using var connection = new SQLiteConnection(ConnectionString);
             return connection.Get<Carro>(id);
         }
+
+        public string ExibirDetalhes(int id)
+        {
+            using var connection = new SQLiteConnection(ConnectionString);
+            Carro carro = BuscarPorId(id);
+            return carro.ExibirDetalhes();
+        }
     }
 }

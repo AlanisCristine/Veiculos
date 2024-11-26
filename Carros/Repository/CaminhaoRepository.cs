@@ -25,6 +25,14 @@ namespace Carros.Repository
             using var connection = new SQLiteConnection(ConnectionString);
             connection.Insert<Caminhao>(carro);
         }
+
+        public string ExibirDetalhes(int id)
+        {
+            using var connection = new SQLiteConnection(ConnectionString);
+            Caminhao caminhao = BuscarPorId(id);
+            return caminhao.ExibirDetalhes();
+        }
+      
         public void Remover(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);

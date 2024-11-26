@@ -14,5 +14,6 @@ namespace Carros.Service.Interface
         List<Carro> Listar();
         Carro BuscarTimePorId(int id);
         void Editar(Carro editPessoa);
+        string ExibirDetalhes(int id);
     }
 }

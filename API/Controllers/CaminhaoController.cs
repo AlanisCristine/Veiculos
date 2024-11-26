@@ -26,7 +26,13 @@ namespace API.Controllers
         {
             return _service.Listar();
         }
-      
+
+        [HttpGet("Exibir-Detalhes-Caminhao")]
+        public string ExibirDetalhes(int id)
+        {
+            return _service.ExibirDetalhes(id);
+        }
+
 
         [HttpPut("Editar-Caminhao")]
         public void EditarCarrinho(Caminhao p)

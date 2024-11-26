@@ -40,6 +40,10 @@ namespace API.Controllers
         {
             _service.Remover(id);
         }
-
+        [HttpGet("Exibir-Detalhes-Carro")]
+        public string ExibirDetalhes(int id)
+        {
+            return _service.ExibirDetalhes(id);
+        }
     }
 }

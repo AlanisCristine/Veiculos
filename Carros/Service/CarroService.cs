@@ -40,5 +40,9 @@ namespace Carros.Service
             repository.Editar(editPessoa);
         }
 
+        public string ExibirDetalhes(int id)
+        {
+            return repository.ExibirDetalhes(id);
+        }
     }
 }

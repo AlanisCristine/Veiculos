@@ -15,5 +15,7 @@ namespace Carros.Repository.Interfaces
         void Editar(Carro carrinho);
         List<Carro> Listar();
         Carro BuscarPorId(int id);
+        string ExibirDetalhes(int id);
+        double CalcularConsumo(double distancia, double Consumo);
     }
 }
